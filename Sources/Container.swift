@@ -226,7 +226,7 @@ extension Container: _Resolver {
         }
     }
 
-    public func getResitrationsInstances() -> [Any] {
+    public func getResitratedInstances() -> [Any] {
         var instances = [Any]()
         services.forEach { key, value in
             if value.storage.instance != nil {
