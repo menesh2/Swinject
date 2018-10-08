@@ -226,6 +226,16 @@ extension Container: _Resolver {
         }
     }
 
+    public func getResitrationsInstances() -> [Any] {
+        var instances = [Any]()
+        services.forEach { key, value in
+            if value.storage.instance != nil {
+                instances.append(value.storage.instance!)
+            }
+        }
+        return instances
+    }
+
     fileprivate func getRegistrations() -> [ServiceKey: ServiceEntryProtocol] {
         var registrations = parent?.getRegistrations() ?? [:]
         services.forEach { key, value in registrations[key] = value }

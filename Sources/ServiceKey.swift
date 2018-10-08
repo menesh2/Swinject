@@ -15,13 +15,13 @@ public protocol ServiceKeyOption: CustomStringConvertible {
 }
 
 // MARK: - ServiceKey
-internal struct ServiceKey {
-    internal let serviceType: Any.Type
-    internal let argumentsType: Any.Type
-    internal let name: String?
-    internal let option: ServiceKeyOption? // Used for SwinjectStoryboard or other extensions.
+struct ServiceKey {
+     let serviceType: Any.Type
+     let argumentsType: Any.Type
+     let name: String?
+     let option: ServiceKeyOption? // Used for SwinjectStoryboard or other extensions.
 
-    internal init(
+     init(
         serviceType: Any.Type,
         argumentsType: Any.Type,
         name: String? = nil,
